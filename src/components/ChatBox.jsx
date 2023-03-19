@@ -5,10 +5,11 @@ import {
   query,
   onSnapshot,
   orderBy,
-  limit,
-  serverTimestamp,
+  limit
 } from "firebase/firestore";
 import { db } from "../firebase.config";
+import firebase from 'firebase/app';
+import 'firebase/firestore';
 
 const ChatBox = () => {
   const handleRef=useRef()
@@ -27,7 +28,7 @@ const ChatBox = () => {
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       const messages = [];
       querySnapshot.forEach((doc) => {
-        messages.push({ ...doc.data(), id: doc.id });
+        messages.push({ ...doc.data(), id: doc.id,createdAt: doc.data().createdAt.toDate()});
       });
       setMessages(messages);
       console.log(messages)

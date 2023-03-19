@@ -1,12 +1,16 @@
-import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { addDoc, collection } from "firebase/firestore";
 import React, { useState } from "react";
 import { UserAuth } from "../context/authContext";
 import { db } from "../firebase.config";
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/firestore';
+
 
 const SendMessage = () => {
   const [value, setValue] = useState("");
   const {currentUser}=UserAuth();
   const handleSubmit = async (e) => {
+    const timestamp = firebase.firestore.Timestamp.fromDate(new Date());
     e.preventDefault();
     if(value.trim() === ""){
       alert("Enter vaild message!")
@@ -19,9 +23,10 @@ const SendMessage = () => {
         text:value,
         avater:photoURL,
         name:displayName,
-        createdAt:serverTimestamp(),
+        createdAt:timestamp,
         uid
       })
+     
     } catch (error) {
       console.log(error);
     }
