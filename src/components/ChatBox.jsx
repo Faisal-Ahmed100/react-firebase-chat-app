@@ -8,8 +8,8 @@ import {
   limit
 } from "firebase/firestore";
 import { db } from "../firebase.config";
-import firebase from 'firebase/app';
-import 'firebase/firestore';
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/firestore';
 
 const ChatBox = () => {
   const handleRef=useRef()
