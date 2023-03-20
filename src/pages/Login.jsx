@@ -21,7 +21,7 @@ const Login = () => {
   return (
     <>
     <Helmet>
-      <title>Home page</title>
+      <title>Login page</title>
     </Helmet>
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content text-center">
