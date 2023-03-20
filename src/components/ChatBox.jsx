@@ -31,7 +31,6 @@ const ChatBox = () => {
         messages.push({ ...doc.data(), id: doc.id,createdAt: doc.data().createdAt.toDate()});
       });
       setMessages(messages);
-      console.log(messages)
     });
     return () => unsubscribe;
   }, []);
