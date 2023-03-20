@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Helmet } from "react-helmet";
 import { useNavigate } from "react-router-dom";
 import { UserAuth } from "../context/authContext";
 
@@ -18,6 +19,10 @@ const Login = () => {
     }
   }, [navigate,currentUser]);
   return (
+    <>
+    <Helmet>
+      <title>Home page</title>
+    </Helmet>
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content text-center">
         <div className="max-w-md">
@@ -32,6 +37,8 @@ const Login = () => {
         </div>
       </div>
     </div>
+    </>
+    
   );
 };
 

@@ -34,7 +34,7 @@ const SendMessage = () => {
     console.log(value)
   };
   return (
-    <div className="fixed w-full bottom-0 py-10 bg-base-200">
+    <div className="fixed w-full bottom-0 py-10 px-3 bg-base-200">
       <form onSubmit={handleSubmit} className="containerWrap w-full flex">
         <input
           type="text"

@@ -1,10 +1,15 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { UserAuth } from "../context/authContext";
 
 const Message = ({ message }) => {
   const {currentUser}=UserAuth();
   return (
     <div>
+      <Helmet>
+        <title>{message.name}</title>
+        <link rel="icon" href={message.avater} />
+      </Helmet>
       <div className={`chat ${message.uid === currentUser.uid ? "chat-end" :"chat-start"}`}>
         <div className="chat-image avatar">
           <div className="w-10 rounded-full">

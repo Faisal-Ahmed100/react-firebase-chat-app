@@ -42,7 +42,7 @@ const ChatBox = () => {
   };
   useEffect(scrollToBottom, [messages])
   return (
-    <div className="pb-44 pt-20 containerWrap">
+    <div className="pb-44 pt-20 px-3 containerWrap">
       {messages.map((message) => {
         return (
           <div key={message.id}>
